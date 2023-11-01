@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="container" style="text-align: center">
+      <h2>Registro de profesores</h2>
+      <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+        <mat-form-field class="example-full-width" *ngIf="edicion">
+          <mat-label>id</mat-label>
+          <input matInput placeholder="id" formControlName="id" />
+        </mat-form-field>
+
+        <br />
+
+        <mat-form-field class="example-full-width" >
+          <mat-label>codProfesor</mat-label>
+          <input
+            matInput
+            placeholder="codProfesor"
+            formControlName="codProfesor"
+          />
+        </mat-form-field>
+
+        <br />
+
+        <mat-form-field class="example-full-width" >
+          <mat-label>nombre</mat-label>
+          <input matInput placeholder="nombre" formControlName="nombre" />
+          <mat-error
+            *ngIf="obtenerControlCampo('nombre')?.errors?.['required']"
+          >
+            El nombre es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+
+        <mat-form-field class="example-full-width" >
+          <mat-label>apellido</mat-label>
+          <input matInput placeholder="apellido" formControlName="apellido" />
+          <mat-error
+            *ngIf="obtenerControlCampo('apellido')?.errors?.['required']"
+          >
+            El apellido es obligatorio.
+          </mat-error>
+        </mat-form-field>
+
+        <br />
+
+        <button mat-raised-button color="primary">Aceptar</button>
+        <button mat-raised-button color="warn" routerLink="/profesores">
+          Cancelar
+        </button>
+        <p>{{ mensaje }}</p>
+      </form>
+    </div>
+  </body>
+</html>
