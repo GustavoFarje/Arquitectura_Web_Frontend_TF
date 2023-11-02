@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container" style="text-align: center">
+        <h2>Registro de Carrera Profesional</h2>
+        <form [formGroup]="form" (submit)="aceptar()" class="example-form">
+          <mat-form-field class="example-full-width" *ngIf="edicion">
+            <mat-label>id</mat-label>
+            <input matInput placeholder="codigo" formControlName="id" />
+          </mat-form-field>
+  
+          <br />
+  
+          <mat-form-field class="example-full-width" >
+            <mat-label>codCarreraProfesional</mat-label>
+            <input
+              matInput
+              placeholder="codCarreraProfesional"
+              formControlName="codCarreraProfesional"
+            />
+          </mat-form-field>
+  
+          <br />
+  
+          <mat-form-field class="example-full-width" >
+            <mat-label>nombre Carrera Profesional</mat-label>
+            <input matInput placeholder="nombreCarreraProfesional" formControlName="nombreCarreraProfesional" />
+            <mat-error
+              *ngIf="obtenerControlCampo('nombreCarreraProfesional')?.errors?.['required']"
+            >
+              El nombre es obligatorio.
+            </mat-error>
+          </mat-form-field>
+  
+          <br />
+  
+          <button mat-raised-button color="primary">Aceptar</button>
+          <button mat-raised-button color="warn" routerLink="/CarrerasProfesionales">
+            Cancelar
+          </button>
+          <p>{{ mensaje }}</p>
+        </form>
+      </div>
+</body>
+</html>
