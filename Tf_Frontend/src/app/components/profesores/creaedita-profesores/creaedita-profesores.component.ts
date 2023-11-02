@@ -14,7 +14,7 @@ form: FormGroup = new FormGroup({});
 profesores: Profesores = new Profesores();
 mensaje: string = '';
 id:number = 0;
-codigoprofesor:number = 0;
+codProfesor:number = 0;
 edicion: boolean = true;
 
 constructor(
