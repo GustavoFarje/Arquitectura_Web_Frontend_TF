@@ -6,6 +6,8 @@ import { CursoComponent } from './components/curso/curso.component';
 import { CreaeditaCursoComponent } from './components/curso/creaedita-curso/creaedita-curso.component';
 import { ProfesoresComponent } from './components/profesores/profesores.component';
 import { CreaeditaProfesoresComponent } from './components/profesores/creaedita-profesores/creaedita-profesores.component';
+import { UniversidadComponent } from './components/universidad/universidad.component';
+import { CreaeditaUniversidadComponent } from './components/universidad/creaedita-universidad/creaedita-universidad.component';
 
 const routes: Routes = [
   {
@@ -30,6 +32,14 @@ const routes: Routes = [
     children: [
       {path: 'nuevo', component: CreaeditacarreraprofesionalComponent},
       {path: 'ediciones/:id', component:CreaeditacarreraprofesionalComponent},
+    ]
+  },
+  {
+    path: 'universidad',
+    component: UniversidadComponent,
+    children: [
+      {path: 'nuevo', component: CreaeditaUniversidadComponent},
+      {path: 'ediciones/:id', component:CreaeditaUniversidadComponent},
     ]
   }
 ];
