@@ -1,3 +1,4 @@
+import { Universidad } from './models/universidad';
 
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
@@ -24,6 +25,9 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import { CarreraprofesionalComponent } from './components/carreraprofesional/carreraprofesional.component';
 import { CreaeditacarreraprofesionalComponent } from './components/carreraprofesional/creaeditacarreraprofesional/creaeditacarreraprofesional.component';
 import { ListarcarreraprofesionalComponent } from './components/carreraprofesional/listarcarreraprofesional/listarcarreraprofesional.component';
+import { UniversidadComponent } from './components/universidad/universidad.component';
+import { ListarUniversidadComponent } from './components/universidad/listar-universidad/listar-universidad.component';
+import { CreaeditaUniversidadComponent } from './components/universidad/creaedita-universidad/creaedita-universidad.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +39,10 @@ import { ListarcarreraprofesionalComponent } from './components/carreraprofesion
     CreaeditaCursoComponent,
     CarreraprofesionalComponent,
     ListarcarreraprofesionalComponent,
-    CreaeditacarreraprofesionalComponent
+    CreaeditacarreraprofesionalComponent,
+    UniversidadComponent,
+    ListarUniversidadComponent,
+    CreaeditaUniversidadComponent
   ],
   imports: [
     BrowserModule,
